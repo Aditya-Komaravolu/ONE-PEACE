@@ -31,6 +31,13 @@ from detectron2.utils import comm
 
 logger = logging.getLogger("detectron2")
 
+from detectron2.data.datasets import register_coco_instances
+
+# Register training dataset
+register_coco_instances("defects_train", {}, "/home/aditya/snaglist_big_dataset/annotations/instances_train2017.json", "/home/aditya/snaglist_big_dataset/train2017")
+# Register validation dataset
+register_coco_instances("defects_val", {}, "/home/aditya/snaglist_big_dataset/annotations/instances_val2017.json", "/home/aditya/snaglist_big_dataset/val2017")
+
 
 def do_test(cfg, model):
     if "evaluator" in cfg.dataloader:

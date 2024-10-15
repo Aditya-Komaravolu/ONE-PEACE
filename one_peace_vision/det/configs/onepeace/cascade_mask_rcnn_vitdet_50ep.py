@@ -96,8 +96,8 @@ model.roi_heads.update(
 train.amp.enabled = True
 train.ddp.fp16_compression = True
 train.max_iter = 92187
-train.checkpointer = dict(period=5000, max_to_keep=100)
-train.eval_period = 5000
+train.checkpointer = dict(period=1000, max_to_keep=100)
+train.eval_period = 1000
 
 lr_multiplier = L(WarmupParamScheduler)(
     scheduler=L(MultiStepParamScheduler)(
